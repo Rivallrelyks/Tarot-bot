@@ -121,8 +121,8 @@ async def card_info(ctx, , card_name str = None)
     response = f{card_key.title()}
 {card['suit']} - {card['number']}
 
-⬆️ Upright {card['upright']}
-⬇️ Reversed {card['reversed']}
+Upright {card['upright']}
+Reversed {card['reversed']}
     
     await ctx.send(response)
 
@@ -132,7 +132,7 @@ async def draw_card(ctx)
     card = TAROT_DECK[card_name]
     is_reversed = random.choice([True, False])
     
-    orientation = ⬇️ Reversed if is_reversed else ⬆️ Upright
+    orientation = Reversed if is_reversed else Upright
     meaning = card['reversed'] if is_reversed else card['upright']
     
     response = f{card_name.title()}
@@ -166,7 +166,7 @@ async def three_card_spread(ctx, , spread_type str = past present future)
         card = TAROT_DECK[card_name]
         is_reversed = random.choice([True, False])
         meaning = card['reversed'] if is_reversed else card['upright']
-        orientation = ⬇️ if is_reversed else ⬆️
+        orientation = if is_reversed else
         
         response += f{i}. {position} {card_name.title()} {orientation}n{meaning}nn
     
@@ -228,3 +228,4 @@ if __name__ == __main__
     except Exception as e
         print(fFailed to start bot {e})
         exit(1)
+
