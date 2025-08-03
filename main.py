@@ -184,7 +184,7 @@ async def list_cards(ctx, suit str = None)
         filtered_cards = [name for name, card in TAROT_DECK.items() if card['suit'] == target_suit]
         
         response = f{target_suit} ({len(filtered_cards)} cards)n
-        response += n.join([f• {name.title()} for name in filtered_cards])
+        response += n.join([f {name.title()} for name in filtered_cards])
     else
         response = fComplete Tarot Deck ({len(TAROT_DECK)} cards)nn
         for suit_name in [Major Arcana, Cups, Pentacles, Swords, Wands]
@@ -228,4 +228,5 @@ if __name__ == __main__
     except Exception as e
         print(fFailed to start bot {e})
         exit(1)
+
 
